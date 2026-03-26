@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[*] %(message)s')
 
 class DataCollector:
-    def __init__(self, output_file="data/traffic_log.csv"):
+    def __init__(self, output_file="data/attack_log.csv"):
         self.output_file = output_file
         self.engine = SecurityEngine()
         self.data_list = []
@@ -19,7 +19,7 @@ class DataCollector:
             features = self.engine.extract_features(packet)
             
             # Label '0' means 'Normal/Benign' traffic
-            features['label'] = 0 
+            features['label'] = 1
             self.data_list.append(features)
             
             if len(self.data_list) % 50 == 0:
