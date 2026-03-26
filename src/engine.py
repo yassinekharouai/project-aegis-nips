@@ -42,12 +42,9 @@ class SecurityEngine:
 
     def decide(self, features):
         """
-        The decision logic. 
-        Currently: Basic Symbolic Rules.
-        Phase 3: AI Model Prediction.
+        DATA COLLECTION MODE:
+        We return 'ACCEPT' for everything so we can capture 
+        real-world traffic patterns without breaking the connection.
         """
-        # Example rule: Block if entropy is suspiciously high (potential shellcode)
-        if features.get('entropy', 0) > 7.0:
-            return "DROP"
-        
+        # We will replace this with 'return model.predict(features)' in Phase 3
         return "ACCEPT"
