@@ -11,7 +11,7 @@ import sys
 logging.basicConfig(level=logging.INFO, format='[*] %(message)s')
 
 class DataCollector:
-    def __init__(self, output_file="data/attack_log.csv"):
+    def __init__(self, output_file="data/normal_log.csv"):
         self.output_file = output_file
         self.engine = SecurityEngine()
         self.data_list = []
@@ -48,7 +48,7 @@ class DataCollector:
                 features = self.engine.extract_features(packet)
                 
                 # Label '1' for attack traffic (as requested)
-                features['label'] = 1
+                features['label'] = 0
                 
                 # Add timestamp for temporal analysis
                 features['timestamp'] = datetime.now().isoformat()
