@@ -1,0 +1,8 @@
+netfilterqueue
+scapy
+pandas
+scikit-learn
+numpy
+rich
+joblib
+pytest
